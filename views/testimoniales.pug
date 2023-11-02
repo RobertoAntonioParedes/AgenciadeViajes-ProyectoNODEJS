@@ -1,0 +1,28 @@
+extends ./layout/index
+
+block contenido
+    main.container.mt-5
+        h1.text-center.mt-5 #{pagina} 
+        .row 
+
+            h2.d-block.text-center.w-100 Agrega un testimonio
+
+            p= JSON.stringify(errores)
+
+            if(errores)
+                each error in errores
+                    .alert.alert-danger.col.text-center= error.mensaje
+
+            .row.justify-content-center.col
+                .col-md-8
+                    form(action="/testimoniales" method="POST")
+                        .form-group 
+                            label(for="nombre") Nombre
+                            input#nombre(type="text", placeholder="Ingrese sus nombres" name="nombre", class="form-control")
+                        .form-group 
+                            label(for="email") Correo electrónico
+                            input#email(type="email", placeholder="Ingrese sus email" name="email", class="form-control")
+                        .form-group 
+                            label(for="mensaje") Mensaje
+                            textarea#mensaje(class="form-control", placeholder="Escribe tu mensaje", name="mensaje", cols="30", rows="10") 
+                        input.btn.btn-success.btn-block(type="submit")
