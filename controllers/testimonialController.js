@@ -4,13 +4,13 @@ const guardarTestimoniales = (req, res)=>{
     const errores = [];
 
     if(nombre.trim() === ''){
-        errores.push({mensaje: 'El nombre esta vacio'});
+        errores.push({mensaje : 'El nombre esta vacio'});
     };
     if(correo.trim() === ''){
-        errores.push({mensaje: 'El correo esta vacio'});
+        errores.push({mensaje : 'El correo esta vacio'});
     };
     if(mensaje.trim() === ''){
-        errores.push({mensaje: 'El mensaje esta vacio'});
+        errores.push({mensaje : 'El mensaje esta vacio'});
     };
 
     if(errores.length > 0){

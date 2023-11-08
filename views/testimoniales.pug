@@ -3,11 +3,10 @@ extends ./layout/index
 block contenido
     main.container.mt-5
         h1.text-center.mt-5 #{pagina} 
+        blockquote.text-center Lee sobre nuestros clientes y sus experiencias
         .row 
-
+            .col-md-12 
             h2.d-block.text-center.w-100 Agrega un testimonio
-
-            p= JSON.stringify(errores)
 
             if(errores)
                 each error in errores
@@ -18,10 +17,10 @@ block contenido
                     form(action="/testimoniales" method="POST")
                         .form-group 
                             label(for="nombre") Nombre
-                            input#nombre(type="text", placeholder="Ingrese sus nombres" name="nombre", class="form-control")
+                            input#nombre(type="text", placeholder="Ingrese sus nombres", name="nombre", class="form-control")
                         .form-group 
                             label(for="email") Correo electrónico
-                            input#email(type="email", placeholder="Ingrese sus email" name="email", class="form-control")
+                            input#email(type="email", placeholder="Ingrese sus email", name="email", class="form-control")
                         .form-group 
                             label(for="mensaje") Mensaje
                             textarea#mensaje(class="form-control", placeholder="Escribe tu mensaje", name="mensaje", cols="30", rows="10") 
