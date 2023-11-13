@@ -1,6 +1,31 @@
 extends ./layout/index
 
+block slider 
+    .slider 
+        .h1 Rio de Janeiro
+        em Aventura
+
 block contenido
-    main.container.mt-5 
-        .row 
-            h1= pagina 
+    main.container.mt-5
+        h2.mb-5.text-center Sobre Nosotros
+        .row.mb-5
+            .col-md-6 
+                p Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate, quos aliquid deleniti fugiat quam, aperiam voluptas molestiae facere, officia exercitationem est dolor consequuntur. Sit facere veritatis, libero nostrum molestias ex!Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
+                p Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nisi nam tempora mollitia dignissimos numquam! Illum aspernatur fugiat tempore corporis alias ea laboriosam. Voluptatibus maxime sunt, ut eum dolore beatae molestiae!
+            .col-md-6
+                img(src="./img/inicio_nosotros.jpg", alt="Imagen sobre nosotros", class="img-fluid")
+        include ./layout/bloque_viajes
+    .descuento
+        .container
+            .row 
+                .col-md-6
+                    .contenido 
+                        h3 5% de descuento 
+                        p.titulo Viaje a Italia
+                        p.fecha 29 de febrero de 2078 - 15 de marzo de 2078
+                        p.precio $1200 USD
+    .container 
+        h2.mt-5.text-center Testimoniales
+        include ./layout/bloque_testimoniales.pug
+
+                                
